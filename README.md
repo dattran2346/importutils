@@ -2,7 +2,13 @@
 
 Deep Learning is fun, but developing it is quite intimidating, especially when you missed some package. I found myself have to go back and forth in a Jupyter Notebook to import yet another package I want to use. However, this approach has 2 drawbacks. First, this interrupts the thinking process, and second, import modules are scattered across the code, which made it's hard to manage. This project aims to provide a minimal set of packages to kickstart a new project.
 
-## Usage
+### Installation
+
+```
+pip install importutils
+```
+
+### Usage
 
 ```
 from importutils import *
