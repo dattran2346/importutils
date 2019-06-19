@@ -10,6 +10,14 @@ pip install importutils
 
 ### Usage
 
+Squeeze all of these
+```
+import numpy as np
+import pandas as pd
+import whatsoever
+```
+
+Into a single line 
 ```
 from importutils import *
 ```
