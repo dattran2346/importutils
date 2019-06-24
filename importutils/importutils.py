@@ -13,13 +13,30 @@ try:
 except:
     print('torch module not found ')
 
-# Import tensorflow
-# try:
-#     import tensorflow as tf
-#     print('import tensorflow as tf')
-# except:
-#     print('tensorflow module not found')
 
+def get_env_name():
+    try:
+        cls = get_ipython().__class__.__name__
+        if cls == 'ZMQInteractiveShell':
+            return 'Jupyter'
+        elif cls == 'TerminalInteractiveShell':
+            return 'Terminal'
+    except NameError:
+        return "Script"
+
+# run default ipython magic
+env = get_env_name()
+if env != "Script":
+    ipython = get_ipython()
+    ipython.magic('reload_ext autoreload')
+    ipython.magic('autoreload 2')
+
+    if env == 'Jupyter':
+        ipython.magic('matplotlib inline')
+    else:
+        ipython.magic('matplotlib tk')
+
+    
 # Import matplotlib
 try:
     import matplotlib.pyplot as plt
